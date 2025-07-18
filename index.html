@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tubarão Bigode - Ofertas Incríveis do Fundo do Mar</title>
+    <meta name="description" content="As melhores ofertas da Shopee selecionadas pelo Tubarão Bigode. Cupons exclusivos e descontos imperdíveis!">
+    <meta property="og:title" content="Tubarão Bigode - Ofertas Incríveis">
+    <meta property="og:description" content="Descontos exclusivos e produtos selecionados pelo Tubarão Bigode">
+    <meta property="og:image" content="https://example.com/tubarao-bigode-share.jpg">
+    <meta property="og:url" content="https://example.com">
+    <meta name="twitter:card" content="summary_large_image">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'shopee-orange': '#FF5722',
+                        'deep-blue': '#0C2D48',
+                        'graphite': '#212121',
+                        'snow': '#FFFFFF',
+                    },
+                    fontFamily: {
+                        'heading': ['Poppins', 'sans-serif'],
+                        'body': ['Inter', 'sans-serif'],
+                    },
+                    animation: {
+                        'pulse-slow': 'pulse 10s infinite',
+                        'wave': 'wave 12s ease-in-out infinite',
+                        'swim': 'swim 8s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        wave: {
+                            '0%, 100%': { transform: 'rotate(0deg)' },
+                            '25%': { transform: 'rotate(2deg)' },
+                            '75%': { transform: 'rotate(-2deg)' },
+                        },
+                        swim: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-20px)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @keyframes bubble {
+            0% { transform: translateY(0) scale(1); opacity: 0.5; }
+            50% { transform: translateY(-20px) scale(1.1); opacity: 1; }
+            100% { transform: translateY(-40px) scale(1); opacity: 0; }
+        }
+        
+        .bubble {
+            animation: bubble 2s ease-out infinite;
+        }
+        
+        .wave-bg {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320'%3E%3Cpath fill='%230C2D48' fill-opacity='1' d='M0,192L48,197.3C96,203,192,213,288,229.3C384,245,480,267,576,250.7C672,235,768,181,864,181.3C960,181,1056,235,1152,234.7C1248,235,1344,181,1392,154.7L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z'%3E%3C/path%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: bottom;
+        }
+        
+        .wave-top {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320'%3E%3Cpath fill='%230C2D48' fill-opacity='1' d='M0,160L48,170.7C96,181,192,203,288,197.3C384,192,480,160,576,165.3C672,171,768,213,864,218.7C960,224,1056,192,1152,181.3C1248,171,1344,181,1392,186.7L1440,192L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z'%3E%3C/path%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: top;
+        }
+        
+        .splash-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, #0C2D48, #1a5276);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            transition: opacity 1s ease-out;
+        }
+        
+        .loading-text {
+            position: relative;
+        }
+        
+        .loading-text::after {
+            content: "...";
+            position: absolute;
+            animation: dots 1.5s steps(5, end) infinite;
+        }
+        
+        @keyframes dots {
+            0%, 20% { content: "."; }
+            40% { content: ".."; }
+            60%, 100% { content: "..."; }
+        }
+        
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+        
+        .social-icon:hover {
+            transform: scale(1.2);
+            filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.7));
+        }
+        
+        .whatsapp-btn:hover {
+            transform: scale(1.1);
+        }
+        
+        .bubble:nth-child(1) { left: 10%; animation-delay: 0s; }
+        .bubble:nth-child(2) { left: 20%; animation-delay: 1s; }
+        .bubble:nth-child(3) { left: 35%; animation-delay: 3s; }
+        .bubble:nth-child(4) { left: 50%; animation-delay: 2s; }
+        .bubble:nth-child(5) { left: 65%; animation-delay: 1.5s; }
+        .bubble:nth-child(6) { left: 80%; animation-delay: 0.5s; }
+        .bubble:nth-child(7) { left: 90%; animation-delay: 2.5s; }
+    </style>
+</head>
+<body class="font-body bg-snow text-graphite">
+    <!-- Splash Screen -->
+   <!-- Splash Screen Tubarão Bigode Supreme -->
+<div id="splashScreen" class="splash-screen relative w-full h-screen bg-[#0A3D62] flex flex-col items-center justify-center overflow-hidden text-center z-50">
+
+  <!-- Fundo animado com bolhas 3D -->
+  <div class="absolute inset-0 pointer-events-none">
+    <div class="bubble absolute bottom-0 left-[20%] w-4 h-4 bg-white rounded-full opacity-30 animate-ping"></div>
+    <div class="bubble absolute bottom-0 left-[40%] w-3 h-3 bg-white rounded-full opacity-40 animate-ping delay-200"></div>
+    <div class="bubble absolute bottom-0 left-[60%] w-2 h-2 bg-white rounded-full opacity-50 animate-ping delay-400"></div>
+    <div class="bubble absolute bottom-0 left-[80%] w-5 h-5 bg-white rounded-full opacity-20 animate-ping delay-600"></div>
+  </div>
+
+  <!-- Contorno brilhante pro vídeo -->
+  <div class="relative max-w-xl w-full animate-fadeInUp">
+    <div class="absolute inset-0 rounded-lg border-4 border-[#FF6B6B] opacity-50 animate-pulse z-10"></div>
+    <video autoplay muted loop playsinline class="w-full rounded-lg shadow-2xl z-20 relative">
+      <source src="Untitled design.mp4" type="video/mp4">
+      Seu navegador não suporta vídeo HTML5.
+    </video>
+  </div>
+
+  <!-- Texto com efeito holográfico -->
+  <h1 class="mt-8 text-3xl md:text-4xl font-bold text-white tracking-wide animate-glow">
+    Carregando ofertas secretas do fundo do mar...
+  </h1>
+</div>
+
+<!-- CSS Animado Absoluto -->
+<style>
+  @keyframes glow {
+    0%, 100% { text-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff; }
+    50% { text-shadow: 0 0 20px #FF6B6B, 0 0 30px #FF6B6B; }
+  }
+  @keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .animate-glow { animation: glow 2s ease-in-out infinite; }
+  .animate-fadeInUp { animation: fadeInUp 1.2s ease forwards; }
+</style>
+
+    <!-- Main Content -->
+    <div id="mainContent" class="hidden">
+        <!-- Navigation -->
+        <nav class="bg-deep-blue text-snow sticky top-0 z-50 shadow-lg">
+            <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+                <div class="flex items-center space-x-2">
+                    <img src="negociador.png" alt="Logo Tubarão Bigode" class="w-20 h-20">
+                    <span class="font-heading text-xl">Tubarão Bigode</span>
+                </div>
+                <div class="hidden md:flex space-x-6">
+                    <a href="#ofertas" class="hover:text-shopee-orange transition-colors duration-300">Ofertas</a>
+                    <a href="#cupons" class="hover:text-shopee-orange transition-colors duration-300">Cupons</a>
+                    <a href="#vip" class="hover:text-shopee-orange transition-colors duration-300">VIP</a>
+                    <a href="#contato" class="hover:text-shopee-orange transition-colors duration-300">Contato</a>
+                </div>
+                <button class="md:hidden text-2xl">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </nav>
+
+        <!-- Hero Section with Wave -->
+        <section class="relative bg-gradient-to-b from-deep-blue to-blue-900 text-snow pt-20 pb-32 wave-top">
+            <div class="container mx-auto px-4 flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-10 md:mb-0">
+                    <h1 class="font-heading text-4xl md:text-5xl lg:text-6xl mb-4">MERGULHE NAS <span class="text-shopee-orange">OFERTAS</span></h1>
+                    <p class="text-lg mb-6">O Tubarão Bigode selecionou as melhores promoções da Shopee para você!</p>
+                    <div class="flex space-x-4">
+                        <a href="#ofertas" class="bg-shopee-orange hover:bg-orange-600 text-white font-bold py-3 px-6 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg">
+                            Ver Ofertas
+                        </a>
+                        <a href="#vip" class="border-2 border-white hover:border-shopee-orange text-white font-bold py-3 px-6 rounded-full transition-all duration-300 transform hover:scale-105">
+                            Grupo VIP
+                        </a>
+                    </div>
+                </div>
+                <div class="md:w-1/2 flex justify-center">
+                    <img src="negociador.png" alt="Tubarão Bigode" class="w-64 h-64 md:w-80 md:h-80 animate-wave">
+                </div>
+            </div>
+        </section>
+
+        <!-- Products Section -->
+        <section id="ofertas" class="py-16 bg-snow">
+            <div class="container mx-auto px-4">
+                <h2 class="font-heading text-3xl md:text-4xl text-center mb-12 text-deep-blue">OFERTAS SELECIONADAS <span class="text-shopee-orange">PELO TUBARÃO</span></h2>
+                
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
+                    <!-- Product 1 -->
+                    <div class="product-card bg-white rounded-lg overflow-hidden shadow-md transition-all duration-300">
+                        <div class="relative">
+                            <img src="https://cf.shopee.com.br/file/sg-11134201-23020-5a8n3t4q5hovc7" alt="Produto" class="w-full h-48 object-contain p-4">
+                            <div class="absolute top-2 right-2 bg-shopee-orange text-white text-xs font-bold px-2 py-1 rounded">
+                                50% OFF
+                            </div>
+                        </div>
+                        <div class="p-4">
+                            <h3 class="font-bold mb-2 line-clamp-2">Smartphone Xiaomi Redmi Note 12 128GB 6GB RAM</h3>
+                            <div class="flex items-center mb-3">
+                                <span class="text-shopee-orange font-bold text-lg">R$ 1.199,00</span>
+                                <span class="text-gray-500 text-sm line-through ml-2">R$ 2.399,00</span>
+                            </div>
+                            <div class="flex space-x-2">
+                                <a href="https://shopee.com.br/product/12345678" target="_blank" rel="noopener noreferrer" class="flex-1 bg-gray-200 hover:bg-gray-300 text-gray-800 text-sm font-bold py-2 px-4 rounded text-center transition-colors duration-300">
+                                    Ver
+                                </a>
+                                <a href="https://shopee.com.br/product/12345678" target="_blank" rel="noopener noreferrer" class="flex-1 bg-shopee-orange hover:bg-orange-600 text-white text-sm font-bold py-2 px-4 rounded text-center transition-colors duration-300">
+                                    Comprar
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Product 2 -->
+                    <div class="product-card bg-white rounded-lg overflow-hidden shadow-md transition-all duration-300">
+                        <div class="relative">
+                            <img src="https://cf.shopee.com.br/file/sg-11134201-23020-5a8n3t4q5hovc7" alt="Produto" class="w-full h-48 object-contain p-4">
+                            <div class="absolute top-2 right-2 bg-shopee-orange text-white text-xs font-bold px-2 py-1 rounded">
+                                30% OFF
+                            </div>
+                        </div>
+                        <div class="p-4">
+                            <h3 class="font-bold mb-2 line-clamp-2">Fone de Ouvido Bluetooth Sem Fio</h3>
+                            <div class="flex items-center mb-3">
+                                <span class="text-shopee-orange font-bold text-lg">R$ 89,90</span>
+                                <span class="text-gray-500 text-sm line-through ml-2">R$ 129,90</span>
+                            </div>
+                            <div class="flex space-x-2">
+                                <a href="https://shopee.com.br/product/12345678" target="_blank" rel="noopener noreferrer" class="flex-1 bg-gray-200 hover:bg-gray-300 text-gray-800 text-sm font-bold py-2 px-4 rounded text-center transition-colors duration-300">
+                                    Ver
+                                </a>
+                                <a href="https://shopee.com.br/product/12345678" target="_blank" rel="noopener noreferrer" class="flex-1 bg-shopee-orange hover:bg-orange-600 text-white text-sm font-bold py-2 px-4 rounded text-center transition-colors duration-300">
+                                    Comprar
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Product 3 -->
+                    <div class="product-card bg-white rounded-lg overflow-hidden shadow-md transition-all duration-300">
+                        <div class="relative">
+                            <img src="https://cf.shopee.com.br/file/sg-11134201-23020-5a8n3t4q5hovc7" alt="Produto" class="w-full h-48 object-contain p-4">
+                            <div class="absolute top-2 right-2 bg-shopee-orange text-white text-xs font-bold px-2 py-1 rounded">
+                                60% OFF
+                            </div>
+                        </div>
+                        <div class="p-4">
+                            <h3 class="font-bold mb-2 line-clamp-2">Relógio Smartwatch X9 Pro GPS</h3>
+                            <div class="flex items-center mb-3">
+                                <span class="text-shopee-orange font-bold text-lg">R$ 159,90</span>
+                                <span class="text-gray-500 text-sm line-through ml-2">R$ 399,90</span>
+                            </div>
+                            <div class="flex space-x-2">
+                                <a href="https://shopee.com.br/product/12345678" target="_blank" rel="noopener noreferrer" class="flex-1 bg-gray-200 hover:bg-gray-300 text-gray-800 text-sm font-bold py-2 px-4 rounded text-center transition-colors duration-300">
+                                    Ver
+                                </a>
+                                <a href="https://shopee.com.br/product/12345678" target="_blank" rel="noopener noreferrer" class="flex-1 bg-shopee-orange hover:bg-orange-600 text-white text-sm font-bold py-2 px-4 rounded text-center transition-colors duration-300">
+                                    Comprar
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Product 4 -->
+                    <div class="product-card bg-white rounded-lg overflow-hidden shadow-md transition-all duration-300">
+                        <div class="relative">
+                            <img src="https://cf.shopee.com.br/file/sg-11134201-23020-5a8n3t4q5hovc7" alt="Produto" class="w-full h-48 object-contain p-4">
+                            <div class="absolute top-2 right-2 bg-shopee-orange text-white text-xs font-bold px-2 py-1 rounded">
+                                40% OFF
+                            </div>
+                        </div>
+                        <div class="p-4">
+                            <h3 class="font-bold mb-2 line-clamp-2">Air Fryer Philco 4L Digital</h3>
+                            <div class="flex items-center mb-3">
+                                <span class="text-shopee-orange font-bold text-lg">R$ 399,00</span>
+                                <span class="text-gray-500 text-sm line-through ml-2">R$ 665,00</span>
+                            </div>
+                            <div class="flex space-x-2">
+                                <a href="https://shopee.com.br/product/12345678" target="_blank" rel="noopener noreferrer" class="flex-1 bg-gray-200 hover:bg-gray-300 text-gray-800 text-sm font-bold py-2 px-4 rounded text-center transition-colors duration-300">
+                                    Ver
+                                </a>
+                                <a href="https://shopee.com.br/product/12345678" target="_blank" rel="noopener noreferrer" class="flex-1 bg-shopee-orange hover:bg-orange-600 text-white text-sm font-bold py-2 px-4 rounded text-center transition-colors duration-300">
+                                    Comprar
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Product 5 -->
+                    <div class="product-card bg-white rounded-lg overflow-hidden shadow-md transition-all duration-300">
+                        <div class="relative">
+                            <img src="https://cf.shopee.com.br/file/sg-11134201-23020-5a8n3t4q5hovc7" alt="Produto" class="w-full h-48 object-contain p-4">
+                            <div class="absolute top-2 right-2 bg-shopee-orange text-white text-xs font-bold px-2 py-1 rounded">
+                                55% OFF
+                            </div>
+                        </div>
+                        <div class="p-4">
+                            <h3 class="font-bold mb-2 line-clamp-2">Câmera Instântanea Polaroid</h3>
+                            <div class="flex items-center mb-3">
+                                <span class="text-shopee-orange font-bold text-lg">R$ 349,90</span>
+                                <span class="text-gray-500 text-sm line-through ml-2">R$ 779,90</span>
+                            </div>
+                            <div class="flex space-x-2">
+                                <a href="https://shopee.com.br/product/12345678" target="_blank" rel="noopener noreferrer" class="flex-1 bg-gray-200 hover:bg-gray-300 text-gray-800 text-sm font-bold py-2 px-4 rounded text-center transition-colors duration-300">
+                                    Ver
+                                </a>
+                                <a href="https://shopee.com.br/product/12345678" target="_blank" rel="noopener noreferrer" class="flex-1 bg-shopee-orange hover:bg-orange-600 text-white text-sm font-bold py-2 px-4 rounded text-center transition-colors duration-300">
+                                    Comprar
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Product 6 -->
+                    <div class="product-card bg-white rounded-lg overflow-hidden shadow-md transition-all duration-300">
+                        <div class="relative">
+                            <img src="https://cf.shopee.com.br/file/sg-11134201-23020-5a8n3t4q5hovc7" alt="Produto" class="w-full h-48 object-contain p-4">
+                            <div class="absolute top-2 right-2 bg-shopee-orange text-white text-xs font-bold px-2 py-1 rounded">
+                                70% OFF
+                            </div>
+                        </div>
+                        <div class="p-4">
+                            <h3 class="font-bold mb-2 line-clamp-2">Kit 5 Camisetas Masculinas Básicas</h3>
+                            <div class="flex items-center mb-3">
+                                <span class="text-shopee-orange font-bold text-lg">R$ 99,90</span>
+                                <span class="text-gray-500 text-sm line-through ml-2">R$ 333,00</span>
+                            </div>
+                            <div class="flex space-x-2">
+                                <a href="https://shopee.com.br/product/12345678" target="_blank" rel="noopener noreferrer" class="flex-1 bg-gray-200 hover:bg-gray-300 text-gray-800 text-sm font-bold py-2 px-4 rounded text-center transition-colors duration-300">
+                                    Ver
+                                </a>
+                                <a href="https://shopee.com.br/product/12345678" target="_blank" rel="noopener noreferrer" class="flex-1 bg-shopee-orange hover:bg-orange-600 text-white text-sm font-bold py-2 px-4 rounded text-center transition-colors duration-300">
+                                    Comprar
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Product 7 -->
+                    <div class="product-card bg-white rounded-lg overflow-hidden shadow-md transition-all duration-300">
+                        <div class="relative">
+                            <img src="https://cf.shopee.com.br/file/sg-11134201-23020-5a8n3t4q5hovc7" alt="Produto" class="w-full h-48 object-contain p-4">
+                            <div class="absolute top-2 right-2 bg-shopee-orange text-white text-xs font-bold px-2 py-1 rounded">
+                                25% OFF
+                            </div>
+                        </div>
+                        <div class="p-4">
+                            <h3 class="font-bold mb-2 line-clamp-2">Notebook Lenovo Ideapad 3i i5 8GB 256GB SSD</h3>
+                            <div class="flex items-center mb-3">
+                                <span class="text-shopee-orange font-bold text-lg">R$ 2.799,00</span>
+                                <span class="text-gray-500 text-sm line-through ml-2">R$ 3.732,00</span>
+                            </div>
+                            <div class="flex space-x-2">
+                                <a href="https://shopee.com.br/product/12345678" target="_blank" rel="noopener noreferrer" class="flex-1 bg-gray-200 hover:bg-gray-300 text-gray-800 text-sm font-bold py-2 px-4 rounded text-center transition-colors duration-300">
+                                    Ver
+                                </a>
+                                <a href="https://shopee.com.br/product/12345678" target="_blank" rel="noopener noreferrer" class="flex-1 bg-shopee-orange hover:bg-orange-600 text-white text-sm font-bold py-2 px-4 rounded text-center transition-colors duration-300">
+                                    Comprar
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Product 8 -->
+                    <div class="product-card bg-white rounded-lg overflow-hidden shadow-md transition-all duration-300">
+                        <div class="relative">
+                            <img src="https://cf.shopee.com.br/file/sg-11134201-23020-5a8n3t4q5hovc7" alt="Produto" class="w-full h-48 object-contain p-4">
+                            <div class="absolute top-2 right-2 bg-shopee-orange text-white text-xs font-bold px-2 py-1 rounded">
+                                45% OFF
+                            </div>
+                        </div>
+                        <div class="p-4">
+                            <h3 class="font-bold mb-2 line-clamp-2">Smart TV LED 50" 4K UHD Samsung</h3>
+                            <div class="flex items-center mb-3">
+                                <span class="text-shopee-orange font-bold text-lg">R$ 2.199,00</span>
+                                <span class="text-gray-500 text-sm line-through ml-2">R$ 3.999,00</span>
+                            </div>
+                            <div class="flex space-x-2">
+                                <a href="https://shopee.com.br/product/12345678" target="_blank" rel="noopener noreferrer" class="flex-1 bg-gray-200 hover:bg-gray-300 text-gray-800 text-sm font-bold py-2 px-4 rounded text-center transition-colors duration-300">
+                                    Ver
+                                </a>
+                                <a href="https://shopee.com.br/product/12345678" target="_blank" rel="noopener noreferrer" class="flex-1 bg-shopee-orange hover:bg-orange-600 text-white text-sm font-bold py-2 px-4 rounded text-center transition-colors duration-300">
+                                    Comprar
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Product 9 -->
+                    <div class="product-card bg-white rounded-lg overflow-hidden shadow-md transition-all duration-300">
+                        <div class="relative">
+                            <img src="https://cf.shopee.com.br/file/sg-11134201-23020-5a8n3t4q5hovc7" alt="Produto" class="w-full h-48 object-contain p-4">
+                            <div class="absolute top-2 right-2 bg-shopee-orange text-white text-xs font-bold px-2 py-1 rounded">
+                                60% OFF
+                            </div>
+                        </div>
+                        <div class="p-4">
+                            <h3 class="font-bold mb-2 line-clamp-2">Fritadeira Elétrica Sem Óleo 5L</h3>
+                            <div class="flex items-center mb-3">
+                                <span class="text-shopee-orange font-bold text-lg">R$ 279,90</span>
+                                <span class="text-gray-500 text-sm line-through ml-2">R$ 699,90</span>
+                            </div>
+                            <div class="flex space-x-2">
+                                <a href="https://shopee.com.br/product/12345678" target="_blank" rel="noopener noreferrer" class="flex-1 bg-gray-200 hover:bg-gray-300 text-gray-800 text-sm font-bold py-2 px-4 rounded text-center transition-colors duration-300">
+                                    Ver
+                                </a>
+                                <a href="https://shopee.com.br/product/12345678" target="_blank" rel="noopener noreferrer" class="flex-1 bg-shopee-orange hover:bg-orange-600 text-white text-sm font-bold py-2 px-4 rounded text-center transition-colors duration-300">
+                                    Comprar
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Product 10 -->
+                    <div class="product-card bg-white rounded-lg overflow-hidden shadow-md transition-all duration-300">
+                        <div class="relative">
+                            <img src="https://cf.shopee.com.br/file/sg-11134201-23020-5a8n3t4q5hovc7" alt="Produto" class="w-full h-48 object-contain p-4">
+                            <div class="absolute top-2 right-2 bg-shopee-orange text-white text-xs font-bold px-2 py-1 rounded">
+                                35% OFF
+                            </div>
+                        </div>
+                        <div class="p-4">
+                            <h3 class="font-bold mb-2 line-clamp-2">Console PlayStation 5 + 2 Controles</h3>
+                            <div class="flex items-center mb-3">
+                                <span class="text-shopee-orange font-bold text-lg">R$ 3.899,00</span>
+                                <span class="text-gray-500 text-sm line-through ml-2">R$ 5.999,00</span>
+                            </div>
+                            <div class="flex space-x-2">
+                                <a href="https://shopee.com.br/product/12345678" target="_blank" rel="noopener noreferrer" class="flex-1 bg-gray-200 hover:bg-gray-300 text-gray-800 text-sm font-bold py-2 px-4 rounded text-center transition-colors duration-300">
+                                    Ver
+                                </a>
+                                <a href="https://shopee.com.br/product/12345678" target="_blank" rel="noopener noreferrer" class="flex-1 bg-shopee-orange hover:bg-orange-600 text-white text-sm font-bold py-2 px-4 rounded text-center transition-colors duration-300">
+                                    Comprar
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="text-center mt-12">
+                    <a href="https://shopee.com.br" target="_blank" rel="noopener noreferrer" class="inline-block bg-shopee-orange hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg">
+                        VER MAIS OFERTAS NA SHOPEE
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- VIP Section -->
+        <section id="vip" class="py-16 bg-gradient-to-r from-deep-blue to-blue-900 text-snow">
+            <div class="container mx-auto px-4">
+                <div class="max-w-3xl mx-auto text-center">
+                    <div class="flex justify-center items-center mb-6">
+                        <i class="fas fa-bell text-shopee-orange text-3xl mr-3"></i>
+                        <h2 class="font-heading text-3xl md:text-4xl">NÃO PERCA NENHUMA OFERTA!</h2>
+                    </div>
+                    <p class="text-lg mb-8">Entre para o grupo VIP do Tubarão Bigode e receba as melhores ofertas antes de todo mundo!</p>
+                    
+                    <form class="flex flex-col sm:flex-row gap-4 max-w-lg mx-auto">
+                        <input type="email" placeholder="Seu melhor e-mail" class="flex-grow px-4 py-3 rounded-full text-graphite focus:outline-none focus:ring-2 focus:ring-shopee-orange">
+                        <button type="button" class="bg-shopee-orange hover:bg-orange-600 text-white font-bold py-3 px-6 rounded-full transition-all duration-300 transform hover:scale-105">
+                            ENTRAR PARA O GRUPO VIP
+                        </button>
+                    </form>
+                    
+                    <p class="text-sm mt-4 opacity-80">Ofertas secretas direto do oceano, só para membros VIP.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Coupons Section -->
+        <section id="cupons" class="py-16 bg-gray-100">
+            <div class="container mx-auto px-4">
+                <h2 class="font-heading text-3xl md:text-4xl text-center mb-12 text-deep-blue">CUPONS <span class="text-shopee-orange">EXCLUSIVOS</span></h2>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- Coupon 1 -->
+                    <div class="bg-white rounded-lg overflow-hidden shadow-lg border-2 border-dashed border-shopee-orange">
+                        <div class="p-6">
+                            <div class="flex justify-between items-start mb-4">
+                                <div>
+                                    <h3 class="font-bold text-xl text-shopee-orange">SHOPEE10</h3>
+                                    <p class="text-gray-600">Cupom de primeira compra</p>
+                                </div>
+                                <span class="bg-shopee-orange text-white text-xs font-bold px-2 py-1 rounded">
+                                    10% OFF
+                                </span>
+                            </div>
+                            <div class="text-sm text-gray-500 mb-4">
+                                <p>Válido para compras acima de R$ 50,00</p>
+                                <p>Válido até 31/12/2023</p>
+                            </div>
+                            <button class="w-full bg-shopee-orange hover:bg-orange-600 text-white font-bold py-2 px-4 rounded transition-colors duration-300">
+                                COPIAR CUPOM
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Coupon 2 -->
+                    <div class="bg-white rounded-lg overflow-hidden shadow-lg border-2 border-dashed border-shopee-orange">
+                        <div class="p-6">
+                            <div class="flex justify-between items-start mb-4">
+                                <div>
+                                    <h3 class="font-bold text-xl text-shopee-orange">BIGODE20</h3>
+                                    <p class="text-gray-600">Cupom exclusivo Tubarão Bigode</p>
+                                </div>
+                                <span class="bg-shopee-orange text-white text-xs font-bold px-2 py-1 rounded">
+                                    20% OFF
+                                </span>
+                            </div>
+                            <div class="text-sm text-gray-500 mb-4">
+                                <p>Válido para compras acima de R$ 100,00</p>
+                                <p>Válido até 30/11/2023</p>
+                            </div>
+                            <button class="w-full bg-shopee-orange hover:bg-orange-600 text-white font-bold py-2 px-4 rounded transition-colors duration-300">
+                                COPIAR CUPOM
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Coupon 3 -->
+                    <div class="bg-white rounded-lg overflow-hidden shadow-lg border-2 border-dashed border-shopee-orange">
+                        <div class="p-6">
+                            <div class="flex justify-between items-start mb-4">
+                                <div>
+                                    <h3 class="font-bold text-xl text-shopee-orange">FRETEGRÁTIS</h3>
+                                    <p class="text-gray-600">Frete grátis em compras selecionadas</p>
+                                </div>
+                                <span class="bg-shopee-orange text-white text-xs font-bold px-2 py-1 rounded">
+                                    FRETE 0
+                                </span>
+                            </div>
+                            <div class="text-sm text-gray-500 mb-4">
+                                <p>Válido para produtos participantes</p>
+                                <p>Válido até 15/12/2023</p>
+                            </div>
+                            <button class="w-full bg-shopee-orange hover:bg-orange-600 text-white font-bold py-2 px-4 rounded transition-colors duration-300">
+                                COPIAR CUPOM
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer with Wave -->
+        <footer id="contato" class="relative bg-deep-blue text-snow pt-16 pb-24 wave-bg">
+            <div class="container mx-auto px-4">
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+                    <div>
+                        <div class="flex items-center space-x-2 mb-4">
+                            <img src="https://cdn-icons-png.flaticon.com/512/1864/1864593.png" alt="Logo Tubarão Bigode" class="w-10 h-10">
+                            <span class="font-heading text-xl">Tubarão Bigode</span>
+                        </div>
+                        <p class="text-sm opacity-80">As melhores ofertas da Shopee selecionadas pelo Tubarão Bigode.</p>
+                    </div>
+                    
+                    <div>
+                        <h3 class="font-heading text-lg mb-4">Links Rápidos</h3>
+                        <ul class="space-y-2">
+                            <li><a href="#ofertas" class="hover:text-shopee-orange transition-colors duration-300">Ofertas</a></li>
+                            <li><a href="#cupons" class="hover:text-shopee-orange transition-colors duration-300">Cupons</a></li>
+                            <li><a href="#vip" class="hover:text-shopee-orange transition-colors duration-300">Grupo VIP</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div>
+                        <h3 class="font-heading text-lg mb-4">Ajuda</h3>
+                        <ul class="space-y-2">
+                            <li><a href="#" class="hover:text-shopee-orange transition-colors duration-300">Perguntas Frequentes</a></li>
+                            <li><a href="#" class="hover:text-shopee-orange transition-colors duration-300">Termos de Uso</a></li>
+                            <li><a href="#" class="hover:text-shopee-orange transition-colors duration-300">Política de Privacidade</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div>
+                        <h3 class="font-heading text-lg mb-4">Redes Sociais</h3>
+                        <div class="flex space-x-4">
+                            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="social-icon text-2xl hover:text-shopee-orange transition-all duration-300" aria-label="Instagram">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="https://tiktok.com" target="_blank" rel="noopener noreferrer" class="social-icon text-2xl hover:text-shopee-orange transition-all duration-300" aria-label="TikTok">
+                                <i class="fab fa-tiktok"></i>
+                            </a>
+                            <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" class="social-icon text-2xl hover:text-shopee-orange transition-all duration-300" aria-label="YouTube">
+                                <i class="fab fa-youtube"></i>
+                            </a>
+                            <a href="https://telegram.org" target="_blank" rel="noopener noreferrer" class="social-icon text-2xl hover:text-shopee-orange transition-all duration-300" aria-label="Telegram">
+                                <i class="fab fa-telegram"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="border-t border-blue-700 pt-6 text-center text-sm opacity-70">
+                    <p>© 2023 Tubarão Bigode. Todos os direitos reservados.</p>
+                    <p class="mt-2">Este site não é afiliado à Shopee. Todas as marcas são propriedade de seus respectivos donos.</p>
+                </div>
+            </div>
+        </footer>
+
+        <!-- WhatsApp Button -->
+        <a href="https://wa.me/5511999999999" target="_blank" rel="noopener noreferrer" class="fixed bottom-6 right-6 whatsapp-btn bg-green-500 text-white w-14 h-14 rounded-full flex items-center justify-center text-2xl shadow-xl animate-pulse-slow transition-transform duration-300" aria-label="Fale com o Tubarão no WhatsApp">
+            <i class="fab fa-whatsapp"></i>
+            <span class="absolute -top-8 -left-8 bg-white text-graphite text-xs font-bold px-2 py-1 rounded whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-300 shadow-md">
+                Fale com o Tubarão
+            </span>
+        </a>
+    </div>
+
+    <script>
+        // Splash screen transition
+        window.addEventListener('load', function() {
+            setTimeout(function() {
+                document.getElementById('splashScreen').style.opacity = '0';
+                setTimeout(function() {
+                    document.getElementById('splashScreen').style.display = 'none';
+                    document.getElementById('mainContent').classList.remove('hidden');
+                }, 1000);
+            }, 2000);
+        });
+        
+        // Copy coupon function
+        document.querySelectorAll('button').forEach(button => {
+            if (button.textContent.includes('COPIAR CUPOM')) {
+                button.addEventListener('click', function() {
+                    const couponCode = this.parentElement.querySelector('h3').textContent;
+                    navigator.clipboard.writeText(couponCode).then(() => {
+                        const originalText = this.textContent;
+                        this.textContent = 'COPIADO!';
+                        this.classList.remove('bg-shopee-orange', 'hover:bg-orange-600');
+                        this.classList.add('bg-green-500', 'hover:bg-green-600');
+                        setTimeout(() => {
+                            this.textContent = originalText;
+                            this.classList.remove('bg-green-500', 'hover:bg-green-600');
+                            this.classList.add('bg-shopee-orange', 'hover:bg-orange-600');
+                        }, 2000);
+                    });
+                });
+            }
+        });
+        
+        // Mobile menu toggle (would be implemented fully in a real project)
+        document.querySelector('.md\\:hidden').addEventListener('click', function() {
+            alert('Menu mobile seria implementado aqui em um projeto real');
+        });
+    </script>
+</body>
+</html>
